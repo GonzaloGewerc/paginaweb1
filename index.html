@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cafeteria.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="cafeteria.js">
+    
+    <title>Cafeteria</title>
+</head>
+<body>
+    <header>
+        <div class="customer-support">
+            <img src="mifoto.jpg" alt="Soporte" class="icon">
+            <span>Soporte a clientes</span>
+        </div>
+        <div class="logo">
+            <h1><i class="fa-solid fa-mug-hot"></i>MiCafetería</h1>
+        </div>
+        <div class="header-buttons">
+            <button class="login-btn"><i class="fa-solid fa-user"></i></button>
+           <!-- Carrito -->
+<input id="carrito-checkbox" type="checkbox" />
+<label class="carrito" for="carrito-checkbox">
+    <i class="fa-solid fa-basket-shopping"></i> <!-- Botón del carrito -->
+</label>
+<div class="ventana-carrito">
+    <button class="close-cart">X</button> <!-- Botón de cerrar ventana -->
+    <h3>Tu carrito: <i class="fa-solid fa-basket-shopping"></i></h3>
+    <ul id="cart-items"></ul> <!-- Aquí se mostrarán los productos -->
+    <p>Total: $<span id="cart-total">0.00</span></p> <!-- Total del carrito -->
+    <button id="finalize-purchase">Finalizar compra</button> <!-- Botón para finalizar compra -->
+    <button id="clear-cart">Vaciar carrito</button> <!-- Botón para vaciar carrito -->
+</div>
+        
+    </header>
+
+
+
+
+
+    <nav>
+        <input id="burger-checkbox" type="checkbox" />
+            <label class="burger" for="burger-checkbox">
+                 <span></span>
+                 <span></span>
+                 <span></span>
+            </label>
+        <ul class="nav-menu">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Moca Helado</a></li>
+            <li><a href="#">Expreso</a></li>
+            <li><a href="#">Capuchino</a></li>
+            <li><a href="#">Más</a></li>
+            <li><a href="#">Blog</a></li>
+        </ul>
+        <div  class="search-bar">
+            <input type="text" placeholder="Buscar..." class="search-input">
+            
+        </div>
+    </nav>
+
+
+
+
+
+
+
+
+    <!-- Primera Sección -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h2>100% Natural</h2>
+            <h3>Café Fresco</h3>
+            <button class="buy-now-btn">Comprar Ahora</button>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Sección de 4 Divs con iconos de Font Awesome -->
+<section class="features-section">
+    <div class="features-container">
+        <!-- Primer Div: Envíos a todo el país -->
+        <div class="feature-item">
+            <i class="fas fa-paper-plane feature-icon"></i> <!-- Icono de avión -->
+            <div class="feature-text">
+                <h4>Envíos a todo el país</h4>
+                <p>Rápido y confiable.</p>
+            </div>
+        </div>
+        <!-- Segundo Div: Con reembolso -->
+        <div class="feature-item">
+            <i class="fas fa-wallet feature-icon"></i> <!-- Icono de billetera -->
+            <div class="feature-text">
+                <h4>Con reembolso</h4>
+                <p>Compra sin preocupaciones.</p>
+            </div>
+        </div>
+        <!-- Tercer Div: Tarjeta regalo especial -->
+        <div class="feature-item">
+            <i class="fas fa-gift feature-icon"></i> <!-- Icono de regalo -->
+            <div class="feature-text">
+                <h4>Tarjeta regalo especial</h4>
+                <p>Un regalo inolvidable.</p>
+            </div>
+        </div>
+        <!-- Cuarto Div: Servicio al cliente 24/7 -->
+        <div class="feature-item">
+            <i class="fas fa-headphones feature-icon"></i> <!-- Icono de auriculares -->
+            <div class="feature-text">
+                <h4>Servicio al cliente 24/7</h4>
+                <p>Siempre a tu disposición.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+<!-- Sección Mejores Categorías -->
+<section class="best-categories">
+    <h2>Mejores Categorías</h2>
+    <div class="categories-container">
+        <!-- Primer Div: Categoría 1 -->
+        <div class="category-item" style="background-image: url('cafe1.jpg');">
+            <h3>Café Moca</h3>
+        </div>
+        <!-- Segundo Div: Categoría 2 -->
+        <div class="category-item" style="background-image: url('cafe1.jpg');">
+            <h3>Expreso americano</h3>
+        </div>
+        <!-- Tercer Div: Categoría 3 -->
+        <div class="category-item" style="background-image: url('cafe1.jpg');">
+            <h3>Capuchino</h3>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<!-- Sección Mejores Productos -->
+<section class="best-products">
+    <h2>Mejores Productos</h2>
+    
+    <!-- Botones de Filtros -->
+    <div class="filter-buttons">
+        <input type="radio" id="destacados" name="filter" checked>
+        <label for="destacados" class="filter-btn">Destacados</label>
+
+        <input type="radio" id="recientes" name="filter">
+        <label for="recientes" class="filter-btn">Más Recientes</label>
+
+        <input type="radio" id="mejores" name="filter">
+        <label for="mejores" class="filter-btn">Mejores Productos</label>
+    </div>
+
+    <!-- Contenedor de productos -->
+    <div class="products-container">
+        <!-- Producto 1 -->
+        <div class="product-card">
+            <div class="product-image">
+                <span class="discount-badge">-20%</span>
+                <img src="cafe2.jpg" alt="Producto 1">
+                <div class="image-buttons">
+                    <button class="action-btn"><i class="fas fa-heart"></i></button>
+                    <button class="action-btn"><i class="fas fa-search"></i></button>
+                    <button class="action-btn"><i class="fas fa-share"></i></button>
+                </div>
+            </div>
+            <div class="stars">★★★★★</div>
+            <h3>Café Premium</h3>
+            <div class="product-details">
+                <button class="buy-btn add-to-cart" data-name="Café Premium" data-price="25.00">
+                    <i class="fas fa-shopping-cart"></i> Añadir
+                </button>
+                <span class="price">$25.00</span>
+            </div>
+        </div>
+    
+        
+        
+        <!-- Producto 2 -->
+        <div class="product-card">
+            <div class="product-image">
+                <span class="discount-badge">-10%</span>
+                <img src="cafe3.jpg" alt="Producto 2">
+                <div class="image-buttons">
+                    <button class="action-btn"><i class="fas fa-heart"></i></button>
+                    <button class="action-btn"><i class="fas fa-search"></i></button>
+                    <button class="action-btn"><i class="fas fa-share"></i></button>
+                </div>
+            </div>
+            <div class="stars">★★★★☆</div>
+            <h3>Capuchino Especial</h3>
+            <div class="product-details">
+                <button class="buy-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                </button>
+                <span class="price">$15.00</span>
+            </div>
+        </div>
+
+        <!-- Producto 3 -->
+        <div class="product-card">
+            <div class="product-image">
+                <span class="discount-badge">-30%</span>
+                <img src="cafe4.jpg" alt="Producto 3">
+                <div class="image-buttons">
+                    <button class="action-btn"><i class="fas fa-heart"></i></button>
+                    <button class="action-btn"><i class="fas fa-search"></i></button>
+                    <button class="action-btn"><i class="fas fa-share"></i></button>
+                </div>
+            </div>
+            <div class="stars">★★★☆☆</div>
+            <h3>Moca Helado</h3>
+            <div class="product-details">
+                <button class="buy-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                </button>
+                <span class="price">$12.00</span>
+            </div>
+        </div>
+
+        <!-- Producto 4 -->
+        <div class="product-card">
+            <div class="product-image">
+                <span class="discount-badge">-15%</span>
+                <img src="cafe5.jpg" alt="Producto 4">
+                <div class="image-buttons">
+                    <button class="action-btn"><i class="fas fa-heart"></i></button>
+                    <button class="action-btn"><i class="fas fa-search"></i></button>
+                    <button class="action-btn"><i class="fas fa-share"></i></button>
+                </div>
+            </div>
+            <div class="stars">★★★☆☆</div>
+            <h3>Expreso Clásico</h3>
+            <div class="product-details">
+                <button class="buy-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                </button>
+                <span class="price">$10.00</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="photo-grid">
+    <div class="photo small-photo">
+        <img src="cafe1.jpg" alt="Foto 1">
+    </div>
+    <div class="photo small-photo">
+        <img src="cafe6.jpg" alt="Foto 2">
+    </div>
+    <div class="photo large-photo">
+        <img src="cafe7.jpg" alt="Foto Grande">
+    </div>
+    <div class="photo small-photo">
+        <img src="cafe8.jpg" alt="Foto 4">
+    </div>
+    <div class="photo small-photo">
+        <img src="cafe9.jpg" alt="Foto 5">
+    </div>
+</section>
+
+
+
+
+<!-- Sección de Especiales (igual que "mejores productos") -->
+<section class="best-products">
+    <h2>Especiales</h2>
+
+    <!-- Contenedor de productos -->
+    <div class="products-container">
+        <!-- Producto 1 -->
+        <div class="product-card">
+            <div class="product-image">
+                <span class="discount-badge">-20%</span>
+                <img src="cafe2.jpg" alt="Producto 1">
+                <div class="image-buttons">
+                    <button class="action-btn"><i class="fas fa-heart"></i></button>
+                    <button class="action-btn"><i class="fas fa-search"></i></button>
+                    <button class="action-btn"><i class="fas fa-share"></i></button>
+                </div>
+            </div>
+            <div class="stars">★★★★★</div>
+            <h3>Café Premium</h3>
+            <div class="product-details">
+                <button class="buy-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                </button>
+                <span class="price">$25.00</span>
+            </div>
+        </div>
+
+        <!-- Producto 2 -->
+        <div class="product-card">
+            <div class="product-image">
+                <span class="discount-badge">-10%</span>
+                <img src="cafe3.jpg" alt="Producto 2">
+                <div class="image-buttons">
+                    <button class="action-btn"><i class="fas fa-heart"></i></button>
+                    <button class="action-btn"><i class="fas fa-search"></i></button>
+                    <button class="action-btn"><i class="fas fa-share"></i></button>
+                </div>
+            </div>
+            <div class="stars">★★★★☆</div>
+            <h3>Capuchino Especial</h3>
+            <div class="product-details">
+                <button class="buy-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                </button>
+                <span class="price">$15.00</span>
+            </div>
+        </div>
+
+        <!-- Producto 3 -->
+        <div class="product-card">
+            <div class="product-image">
+                <span class="discount-badge">-30%</span>
+                <img src="cafe4.jpg" alt="Producto 3">
+                <div class="image-buttons">
+                    <button class="action-btn"><i class="fas fa-heart"></i></button>
+                    <button class="action-btn"><i class="fas fa-search"></i></button>
+                    <button class="action-btn"><i class="fas fa-share"></i></button>
+                </div>
+            </div>
+            <div class="stars">★★★☆☆</div>
+            <h3>Moca Helado</h3>
+            <div class="product-details">
+                <button class="buy-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                </button>
+                <span class="price">$12.00</span>
+            </div>
+        </div>
+
+        <!-- Producto 4 -->
+        <div class="product-card">
+            <div class="product-image">
+                <span class="discount-badge">-15%</span>
+                <img src="cafe5.jpg" alt="Producto 4">
+                <div class="image-buttons">
+                    <button class="action-btn"><i class="fas fa-heart"></i></button>
+                    <button class="action-btn"><i class="fas fa-search"></i></button>
+                    <button class="action-btn"><i class="fas fa-share"></i></button>
+                </div>
+            </div>
+            <div class="stars">★★★☆☆</div>
+            <h3>Expreso Clásico</h3>
+            <div class="product-details">
+                <button class="buy-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                </button>
+                <span class="price">$10.00</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="latest-blogs">
+    <h2>Últimos Blogs</h2>
+    <div class="blog-container">
+        <div class="blog-card">
+            <img src="cafe10.jpg" alt="Blog 1">
+            <h3>Título del Blog 1</h3>
+            <p class="date">18 de noviembre 2024</p>
+            <p class="description">Este es un pequeño resumen del blog 1.Este es un pequeño resumen del blog 1.Este es un pequeño resumen del blog 1.</p>
+            <button>Leer más</button>
+        </div>
+        <div class="blog-card">
+            <img src="cafe10.jpg" alt="Blog 2">
+            <h3>Título del Blog 2</h3>
+            <p class="date">18 de noviembre 2024</p>
+            <p class="description">Este es un pequeño resumen del blog 2.Este es un pequeño resumen del blog 1.Este es un pequeño resumen del blog 1.</p>
+            <button>Leer más</button>
+        </div>
+        <div class="blog-card">
+            <img src="cafe10.jpg" alt="Blog 3">
+            <h3>Título del Blog 3</h3>
+            <p class="date">18 de noviembre 2024</p>
+            <p class="description">Este es un pequeño resumen del blog 3.Este es un pequeño resumen del blog 1.Este es un pequeño resumen del blog 1.</p>
+            <button>Leer más</button>
+        </div>
+    </div>
+</section>
+
+
+
+<script src="cafeteria.js"></script>
+</body>
+</html>
